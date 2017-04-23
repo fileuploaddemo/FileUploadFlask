@@ -1,0 +1,5 @@
+Flask==0.12
+Jinja2==2.9.6
+Werkzeug==0.12.1
+gunicorn==19.6.0
+gevent

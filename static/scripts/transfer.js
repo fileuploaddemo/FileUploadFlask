@@ -30,12 +30,16 @@ $(function () {
 		fileInfoContainer.css({ 'color': '#fff', 'background-color': '#cb4638' });
 		fileInfoContainer.find('.trash').removeClass('trash').unbind();
 		fileInfoContainer.find('.download').removeClass('download').unbind();
-		$.post(deleteUrl, { '_method': 'delete' }, function () {
-			setTimeout(function () {
-				fileInfoContainer.slideUp('fast', function () {
-					fileInfoContainer.remove();
-				});
-			}, 300);
+		$.ajax({
+			type: "DELETE",
+			url: deleteUrl,
+			success: function () {
+				setTimeout(function () {
+					fileInfoContainer.slideUp('fast', function () {
+						fileInfoContainer.remove();
+					});
+				}, 300);
+			} 
 		});
 	}
 
@@ -396,7 +400,7 @@ $(function () {
 	}
 
 	function showHtml5View() {
-		$('#logo').append('<img src="images/logo5.jpg" />');
+		$('#logo').append('<img src="static/images/logo5.jpg" />');
 
 		var dragAree = $('<div id="drag_area"><div class="drag_hint">' + STRINGS.DRAG_TO_HERE + '</div></div)').addClass('normal').appendTo('#logo');
 		$('#upload_hint').empty();
@@ -412,7 +416,7 @@ $(function () {
 	}
 
 	function showHtml4View() {
-		$('#logo').append('<img src="images/logo.jpg" />').append('<div class="wifi">' + STRINGS.WIFI_AVAILABLE + '</div>');
+		$('#logo').append('<img src="static/images/logo.jpg" />').append('<div class="wifi">' + STRINGS.WIFI_AVAILABLE + '</div>');
 		$('#upload_button').css('background-image', 'url("images/select_file1_rollover.jpg")');
 		$('#upload_hint').html(STRINGS.SELECT_YOUR_FILES + '<br />' + STRINGS.SUPPORTED_FILE_TYPES);
 		$('<div class="button_lable">' + STRINGS.SELECT_BUTTON_LABLE + '</div>').prependTo("#upload_button")

@@ -1,6 +1,6 @@
 ﻿{% block head %}
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>{{-this.title}}</title>
+    <title>{{title}}</title>
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 {% endblock %}
 {% block page_content %}
@@ -35,8 +35,8 @@
 {% endblock %}
 {% block scripts %}
     <script src="{{ url_for('static', filename='scripts/jquery-1.7.2.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/lang.js?0.1') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/transfer.js?0.1') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/lang.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/transfer.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/ajaxfileupload.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/bitcandies.upload5.js') }}"></script>
 {% endblock %}

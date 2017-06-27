@@ -68,8 +68,3 @@ def delete(filename):
         except:
             return jsonify({"result":"error"})
 
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
